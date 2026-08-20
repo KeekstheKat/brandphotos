@@ -1,0 +1,41 @@
+labels[i].parentElement;
+      if (container) { container.style.display = 'none'; }
+      var next = container ? container.nextElementSibling : null;
+      if (next && next.querySelector && next.querySelector('input')) { next.style.display = 'none'; }
+    }
+  }
+}
+
+function inject(){
+  if(document.getElementById('chc-waitlist-block')) { hideCoupon(); return; }
+  var site = document.querySelector('.thrivecart-site');
+  var regions = document.querySelector('.builder-regions');
+  if(!site || !regions) { return; }
+  site.style.flexDirection = 'column';
+  var topWrap = document.createElement('div');
+  topWrap.innerHTML = topHtml;
+  site.insertBefore(topWrap, regions);
+  var footWrap = document.createElement('div');
+  footWrap.innerHTML = footerHtml;
+  site.appendChild(footWrap);
+  var btns = document.querySelectorAll('.chc-scroll-btn');
+  for (var i=0;i<btns.length;i++){
+    btns[i].addEventListener('click', function(e){
+      e.preventDefault();
+      var emailField = document.querySelector('.thrivecart-site input[type=email], .thrivecart-site input[placeholder*="first name" i], .thrivecart-site input[placeholder*="email" i]');
+      if (emailField) { emailField.scrollIntoView({behavior:'smooth', block:'center'}); emailField.focus(); }
+    });
+  }
+  hideCoupon();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', inject);
+} else {
+  inject();
+}
+setTimeout(inject, 400);
+setTimeout(inject, 1200);
+setTimeout(inject, 2500);
+setTimeout(hideCoupon, 3500);
+
+</script>
