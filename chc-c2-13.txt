@@ -1,0 +1,66 @@
+small-group coaching sessions/year, max 25 women per group. Done either Hybrid (located in Stouffville and virtual) or Virtual only.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Health Review</h4>
+      <p>Health questionnaires filled out, receive written feedback and direction from a ND, 2x/year.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Resources + Challenges</h4>
+      <p>Practical resources, guides and seasonal challenges to help you apply what you learn.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Member Perks</h4>
+      <p>Exclusive pricing on professional brand supplements, shipped across North America.</p>
+    </div>
+  </div>
+</div>
+
+<div class="who-combined">
+  <div class="who-top">
+    <div class="who-text">
+      <h2>This is for you if you're a woman who:</h2>
+      <ul>
+        <li>Wants to understand what's really going on with your hormones and digestion</li>
+        <li>Is ready for real answers, not just a prescription</li>
+        <li>Wants a faith-centered, supportive community walking alongside you</li>
+        <li>Is looking for practical tools you can actually use week to week</li>
+      </ul>
+    </div>
+    <div class="who-img">
+      <img src="https://raw.githubusercontent.com/KeekstheKat/brandphotos/main/IMG_9719.jpg" alt="CHC Community">
+    </div>
+  </div>
+  <div class="proof-row">
+    <div class="testimonial-card">
+      <p>"It was so empowering to understand a complimentary way to address my health that truly got to the root cause. So, so insightful! I just want to learn everything about digestion. I really liked the discussion about your gut affects essentially everything and how certain nutrients and food can have different impacts. It was the perfect amount of technical information (to make it feel valuable and full of new perspectives) and accessible!"</p>
+      <div class="name">Kathryn M.</div>
+    </div>
+    <div class="testimonial-card">
+      <p>"I finally feel like I understand my own body. The teaching is easy to follow and the community makes it feel doable, not overwhelming."</p>
+      <div class="name">Carly K.</div>
+    </div>
+  </div>
+</div>
+
+<div class="final-cta">
+  <h2>Be the first to know.</h2>
+  <ul>
+    <li>Exclusive early-bird pricing</li>
+    <li>First access when doors open</li>
+    <li>A bonus welcome gift for founding members</li>
+  </ul>
+  <br>
+  <a href="#chc-email-field" class="btn chc-scroll-btn">Join the Waitlist</a>
+</div>
+
+</div>
+`;
+var footerHtml = '<div class="chc-footer-wrap"><footer style="text-align:center;padding:18px 8vw;color:#948577;font-size:13px;background:#FBF6F2;">We take you from confused, to confident in your health.</footer></div>';
+var topHtml = css + htmlPart;
+
+function hideCoupon(){
+  var labels = document.querySelectorAll('.thrivecart-site label, .thrivecart-site .checkbox');
+  for (var i=0;i<labels.length;i++){
+    var t = (labels[i].textContent||'').trim();
+    if (t.indexOf('Have a coupon code') !== -1){
+      var container = 
