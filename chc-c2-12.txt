@@ -1,0 +1,19 @@
+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" alt="Inside the CHC">
+    </div>
+    <div class="inside-right">
+      <div class="eyebrow">Inside the CHC You'll Find...</div>
+      <h2>Faith-integrated health education, practical tools and community</h2>
+    </div>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h4>Monthly Live Teaching</h4>
+      <p>Live monthly teaching sessions on hormone, digestive and immune health, taught by Dr. Kaylee.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Private CHC Community</h4>
+      <p>A private, faith-centered community of women walking this journey together.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Small Groups</h4>
+      <p>6 
