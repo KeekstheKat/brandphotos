@@ -1,0 +1,157 @@
+<script>
+function b64dec(b64){var bin=atob(b64);var bytes=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++){bytes[i]=bin.charCodeAt(i);}return new TextDecoder('utf-8').decode(bytes);}
+var cssB64 = 'I2NoYy13YWl0bGlzdC1ibG9ja3sKICAtLWluazojMkUyNjIyOyAtLWNyZWFtOiNGQkY2RjI7IC0tYmx1c2g6I0VGRDJDRTsgLS1yb3NlOiNDOThEOEE7IC0tcm9zZS1kYXJrOiNBODY3NkE7CiAgLS1kdXN0OiNGNkU0REU7IC0tdGF1cGU6I0U0RDNDOTsgLS1tdXRlZDojOTQ4NTc3OyAtLWxpbmU6I0VCRENEMzsgLS13aGl0ZTojRkZGRkZGOwogIGZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLCBBcmlhbCwgc2Fucy1zZXJpZjsKICBjb2xvcjogdmFyKC0taW5rKTsKICB3aWR0aDogMTAwJTsKICBib3gtc2l6aW5nOiBib3JkZXItYm94Owp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgKnsgYm94LXNpemluZzogYm9yZGVyLWJveDsgfQojY2hjLXdhaXRsaXN0LWJsb2NrIGF7IHRleHQtZGVjb3JhdGlvbjpub25lOyB9CgovKiBUT1AgQkFOTkVSICovCiNjaGMtd2FpdGxpc3QtYmxvY2sgLnRvcC1iYW5uZXJ7CiAgYmFja2dyb3VuZDogdmFyKC0tY3JlYW0pOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICBwYWRkaW5nOiAyMnB4IDIwcHg7CiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHZhcigtLWxpbmUpOwp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLnRvcC1iYW5uZXIgaDF7CiAgbWFyZ2luOjA7CiAgZm9udC1zaXplOiAyNnB4OwogIGxldHRlci1zcGFjaW5nOiAycHg7CiAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsKICBjb2xvcjogdmFyKC0tcm9zZS1kYXJrKTsKICBmb250LXdlaWdodDogNzAwOwp9CgovKiBIRVJPICovCiNjaGMtd2FpdGxpc3QtYmxvY2sgLmhlcm97CiAgZGlzcGxheTpmbGV4OyBmbGV4LXdyYXA6d3JhcDsgYWxpZ24taXRlbXM6Y2VudGVyOyBnYXA6NDBweDsKICBiYWNrZ3JvdW5kOiB2YXIoLS13aGl0ZSk7CiAgcGFkZGluZzogNjBweCA4dnc7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAuaGVyby1sZWZ0eyBmbGV4OjEgMSA0MjBweDsgbWluLXdpZHRoOjI4MHB4OyB9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLmhlcm8tcmlnaHR7IGZsZXg6MSAxIDM2MHB4OyBtaW4td2lkdGg6MjgwcHg7IHRleHQtYWxpZ246Y2VudGVyOyB9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLmhlcm8tcmlnaHQgaW1newogIHdpZHRoOjEwMCU7IG1heC13aWR0aDozODBweDsgYm9yZGVyLXJhZGl1czogMTZweDsgb2JqZWN0LWZpdDpjb3ZlcjsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5oZXJvLWJpb3sKICBtYXJnaW4tdG9wOjE0cHg7CiAgZm9udC1zaXplOjE0cHg7CiAgbGluZS1oZWlnaHQ6MS42OwogIGNvbG9yOiB2YXIoLS1tdXRlZCk7CiAgZm9udC13ZWlnaHQ6NjAwOwp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLmV5ZWJyb3d7CiAgdGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOyBsZXR0ZXItc3BhY2luZzoycHg7IGZvbnQtc2l6ZToxM3B4OwogIGNvbG9yOiB2YXIoLS1yb3NlLWRhcmspOyBmb250LXdlaWdodDo3MDA7IG1hcmdpbi1ib3R0b206MTRweDsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5oZXJvLWxlZnQgaDJ7CiAgZm9udC1zaXplOjM4cHg7IGxpbmUtaGVpZ2h0OjEuMjsgbWFyZ2luOjAgMCAxMnB4IDA7IGNvbG9yOiB2YXIoLS1pbmspOwp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLmhlcm8tc3ViewogIGZvbnQtc2l6ZToyMHB4OyBjb2xvcjogdmFyKC0tcm9zZS1kYXJrKTsgZm9udC13ZWlnaHQ6NjAwOyBtYXJnaW4tYm90dG9tOjE2cHg7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAuaGVyby1kZXNjewogIGZvbnQtc2l6ZToxNnB4OyBsaW5lLWhlaWdodDoxLjc7IGNvbG9yOiB2YXIoLS1pbmspOyBtYXJnaW4tYm90dG9tOjI4cHg7IG1heC13aWR0aDo1MjBweDsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5idG57CiAgZGlzcGxheTppbmxpbmUtYmxvY2s7IGJhY2tncm91bmQ6IHZhcigtLXJvc2UtZGFyayk7IGNvbG9yOnZhcigtLXdoaXRlKTsKICBwYWRkaW5nOjE2cHggMzRweDsgYm9yZGVyLXJhZGl1czo5OTlweDsgZm9udC13ZWlnaHQ6NzAwOyBmb250LXNpemU6MTZweDsKICBjdXJzb3I6cG9pbnRlcjsgYm9yZGVyOm5vbmU7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAuYnRuOmhvdmVyeyBiYWNrZ3JvdW5kOiB2YXIoLS1yb3NlKTsgfQoKLyogQk9OVVMgQkFOTkVSICovCiNjaGMtd2FpdGxpc3QtYmxvY2sgLmJvbnVzLWJhbm5lcnsKICBiYWNrZ3JvdW5kOiB2YXIoLS1ibHVzaCk7CiAgcGFkZGluZzogMzRweCA4dnc7CiAgdGV4dC1hbGlnbjpjZW50ZXI7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAuYm9udXMtYmFubmVyIGgzewogIG1hcmdpbjowIGF1dG8gOHB4IGF1dG87IGZvbnQtc2l6ZToyNHB4OyBjb2xvcjogdmFyKC0taW5rKTsgdGV4dC1hbGlnbjpjZW50ZXI7IG1heC13aWR0aDo3MjBweDsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5ib251cy1iYW5uZXIgcHsKICBtYXJnaW46MCBhdXRvOyBmb250LXNpemU6MTVweDsgY29sb3I6IHZhcigtLWluayk7IG9wYWNpdHk6MC44NTsgdGV4dC1hbGlnbjpjZW50ZXI7IG1heC13aWR0aDo3MjBweDsKfQoKLyogSU5TSURFIENIQyAqLwojY2hjLXdhaXRsaXN0LWJsb2NrIC5pbnNpZGV7CiAgYmFja2dyb3VuZDogdmFyKC0tZHVzdCk7CiAgcGFkZGluZzogNzBweCA4dnc7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAuaW5zaWRlLXRvcHsKICBkaXNwbGF5OmZsZXg7IGZsZXgtd3JhcDp3cmFwOyBhbGlnbi1pdGVtczpjZW50ZXI7IGdhcDo0MHB4OyBtYXJnaW4tYm90dG9tOjUwcHg7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAuaW5zaWRlLWxlZnR7IGZsZXg6MSAxIDM4MHB4OyBtaW4td2lkdGg6MjgwcHg7IH0KI2NoYy13YWl0bGlzdC1ibG9jayAuaW5zaWRlLWxlZnQgaW1newogIHdpZHRoOjEwMCU7IGJvcmRlci1yYWRpdXM6MTZweDsgb2JqZWN0LWZpdDpjb3ZlcjsgbWF4LWhlaWdodDo0MjBweDsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5pbnNpZGUtcmlnaHR7IGZsZXg6MSAxIDQyMHB4OyBtaW4td2lkdGg6MjgwcHg7IH0KI2NoYy13YWl0bGlzdC1ibG9jayAuaW5zaWRlLXJpZ2h0IGgyewogIGZvbnQtc2l6ZTozMnB4OyBsaW5lLWhlaWdodDoxLjM7IGNvbG9yOiB2YXIoLS1pbmspOyBtYXJnaW46MDsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5mZWF0dXJlLWdyaWR7CiAgZGlzcGxheTpncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KDMsIDFmcik7IGdhcDoyNHB4Owp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLmZlYXR1cmUtY2FyZHsKICBiYWNrZ3JvdW5kOiB2YXIoLS13aGl0ZSk7IGJvcmRlci1yYWRpdXM6MTRweDsgcGFkZGluZzoyNnB4IDIycHg7IGJvcmRlcjoxcHggc29saWQgdmFyKC0tbGluZSk7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAuZmVhdHVyZS1jYXJkIGg0ewogIG1hcmdpbjowIDAgMTBweCAwOyBmb250LXNpemU6MTdweDsgY29sb3I6IHZhcigtLXJvc2UtZGFyayk7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAuZmVhdHVyZS1jYXJkIHB7CiAgbWFyZ2luOjA7IGZvbnQtc2l6ZToxNHB4OyBsaW5lLWhlaWdodDoxLjY7IGNvbG9yOiB2YXIoLS1pbmspOyBvcGFjaXR5OjAuODU7Cn0KCi8qIFdITyArIFBST09GICovCiNjaGMtd2FpdGxpc3QtYmxvY2sgLndoby1jb21iaW5lZHsKICBiYWNrZ3JvdW5kOiB2YXIoLS13aGl0ZSk7CiAgcGFkZGluZzogNzBweCA4dnc7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAud2hvLXRvcHsKICBkaXNwbGF5OmZsZXg7IGZsZXgtd3JhcDp3cmFwOyBhbGlnbi1pdGVtczpjZW50ZXI7IGdhcDo0MHB4OyBtYXJnaW4tYm90dG9tOjYwcHg7Cn0KI2NoYy13YWl0bGlzdC1ibG9jayAud2hvLXRleHR7IGZsZXg6MSAxIDQyMHB4OyBtaW4td2lkdGg6MjgwcHg7IH0KI2NoYy13YWl0bGlzdC1ibG9jayAud2hvLXRleHQgaDJ7IGZvbnQtc2l6ZTozMHB4OyBtYXJnaW46MCAwIDE4cHggMDsgfQojY2hjLXdhaXRsaXN0LWJsb2NrIC53aG8tdGV4dCBoMi53aG8taGVhZGxpbmV7IHRleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTsgbGV0dGVyLXNwYWNpbmc6MXB4OyBjb2xvcjogdmFyKC0tcm9zZS1kYXJrKTsgZm9udC1zaXplOjI2cHg7IH0KI2NoYy13YWl0bGlzdC1ibG9jayAud2hvLXRleHQgcHsgZm9udC1zaXplOjE2cHg7IGxpbmUtaGVpZ2h0OjEuNzsgY29sb3I6IHZhcigtLWluayk7IG9wYWNpdHk6MC44NTsgbWFyZ2luOjAgMCAyMHB4IDA7IH0KI2NoYy13YWl0bGlzdC1ibG9jayAud2hvLXRleHQgdWx7IG1hcmdpbjowOyBwYWRkaW5nLWxlZnQ6MjBweDsgbGlzdC1zdHlsZTpkaXNjIG91dHNpZGU7IH0KI2NoYy13YWl0bGlzdC1ibG9jayAud2hvLXRleHQgbGl7IGZvbnQtc2l6ZToxNnB4OyBsaW5lLWhlaWdodDoxLjg7IG1hcmdpbi1ib3R0b206OHB4OyBkaXNwbGF5Omxpc3QtaXRlbTsgbGlzdC1zdHlsZTpkaXNjOyB9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLndoby1pbWd7IGZsZXg6MSAxIDM2MHB4OyBtaW4td2lkdGg6MjgwcHg7IH0KI2NoYy13YWl0bGlzdC1ibG9jayAud2hvLWltZyBpbWd7IHdpZHRoOjEwMCU7IGJvcmRlci1yYWRpdXM6MTZweDsgb2JqZWN0LWZpdDpjb3ZlcjsgbWF4LWhlaWdodDo0MjBweDsgfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5wcm9vZi1yb3d7CiAgZGlzcGxheTpncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KDIsIDFmcik7IGdhcDoyNnB4Owp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLnRlc3RpbW9uaWFsLWNhcmR7CiAgYmFja2dyb3VuZDogdmFyKC0tZHVzdCk7IGJvcmRlci1yYWRpdXM6MTRweDsgcGFkZGluZzoyOHB4OyBib3JkZXI6MXB4IHNvbGlkIHZhcigtLWxpbmUpOwp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLnRlc3RpbW9uaWFsLWNhcmQgcHsKICBmb250LXNpemU6MTVweDsgbGluZS1oZWlnaHQ6MS43OyBjb2xvcjogdmFyKC0taW5rKTsgbWFyZ2luOjAgMCAxNHB4IDA7IGZvbnQtc3R5bGU6aXRhbGljOwp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLnRlc3RpbW9uaWFsLWNhcmQgLm5hbWV7CiAgZm9udC13ZWlnaHQ6NzAwOyBjb2xvcjogdmFyKC0tcm9zZS1kYXJrKTsgZm9udC1zaXplOjE0cHg7IGZvbnQtc3R5bGU6bm9ybWFsOwp9CgovKiBGSU5BTCBDVEEgKi8KI2NoYy13YWl0bGlzdC1ibG9jayAuZmluYWwtY3RhewogIGJhY2tncm91bmQ6IHZhcigtLXJvc2UtZGFyayk7CiAgY29sb3I6IHZhcigtLXdoaXRlKTsKICB0ZXh0LWFsaWduOmNlbnRlcjsKICBwYWRkaW5nOiA3MHB4IDh2dzsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5maW5hbC1jdGEgaDJ7CiAgZm9udC1zaXplOjM0cHg7IG1hcmdpbjowIDAgMjZweCAwOyB0ZXh0LWFsaWduOmNlbnRlcjsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5maW5hbC1jdGEgaDIuZmluYWwtY3RhLWhlYWRsaW5lewogIHRleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTsgbGV0dGVyLXNwYWNpbmc6MXB4OyBtYXJnaW46MCAwIDE0cHggMDsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5maW5hbC1jdGEtc3ViewogIGZvbnQtc2l6ZToxNnB4OyBsaW5lLWhlaWdodDoxLjY7IGNvbG9yOiNGRkZGRkY7IG9wYWNpdHk6MC45OyBtYXgtd2lkdGg6NTIwcHg7CiAgbWFyZ2luOjAgYXV0byAyNnB4IGF1dG87IHRleHQtYWxpZ246Y2VudGVyOwp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLmZpbmFsLWN0YSB1bHsKICBsaXN0LXN0eWxlOm5vbmU7IHBhZGRpbmc6MDsgbWFyZ2luOjAgMCAzMHB4IDA7CiAgZGlzcGxheTppbmxpbmUtYmxvY2s7IHRleHQtYWxpZ246bGVmdDsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5maW5hbC1jdGEgbGl7CiAgZm9udC1zaXplOjE4cHg7IGZvbnQtd2VpZ2h0OjgwMDsgY29sb3I6I0ZGRkZGRjsgbWFyZ2luLWJvdHRvbToxMnB4OwogIHBhZGRpbmctbGVmdDoyOHB4OyBwb3NpdGlvbjpyZWxhdGl2ZTsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5maW5hbC1jdGEgbGk6YmVmb3JlewogIGNvbnRlbnQ6IuKckyI7IHBvc2l0aW9uOmFic29sdXRlOyBsZWZ0OjA7IGNvbG9yOiB2YXIoLS1ibHVzaCk7IGZvbnQtd2VpZ2h0OjkwMDsKfQojY2hjLXdhaXRsaXN0LWJsb2NrIC5maW5hbC1jdGEgLmJ0bnsKICBiYWNrZ3JvdW5kOiB2YXIoLS13aGl0ZSk7IGNvbG9yOiB2YXIoLS1yb3NlLWRhcmspOwp9CiNjaGMtd2FpdGxpc3QtYmxvY2sgLmZpbmFsLWN0YSAuYnRuOmhvdmVyeyBiYWNrZ3JvdW5kOiB2YXIoLS1ibHVzaCk7IH0KCiNjaGMtd2FpdGxpc3QtYmxvY2sgZm9vdGVyewogIGJhY2tncm91bmQ6IHZhcigtLWluayk7IGNvbG9yOiB2YXIoLS1jcmVhbSk7IHRleHQtYWxpZ246Y2VudGVyOwogIHBhZGRpbmc6MjJweCAyMHB4OyBmb250LXNpemU6MTRweDsKfQoKQG1lZGlhIChtYXgtd2lkdGg6IDgyMHB4KXsKICAjY2hjLXdhaXRsaXN0LWJsb2NrIC5mZWF0dXJlLWdyaWR7IGdyaWQtdGVtcGxhdGUtY29sdW1uczoxZnIgMWZyOyB9CiAgI2NoYy13YWl0bGlzdC1ibG9jayAucHJvb2Ytcm93eyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6MWZyOyB9Cn0KQG1lZGlhIChtYXgtd2lkdGg6IDU2MHB4KXsKICAjY2hjLXdhaXRsaXN0LWJsb2NrIC5mZWF0dXJlLWdyaWR7IGdyaWQtdGVtcGxhdGUtY29sdW1uczoxZnI7IH0KICAjY2hjLXdhaXRsaXN0LWJsb2NrIC5oZXJvLWxlZnQgaDJ7IGZvbnQtc2l6ZToyOHB4OyB9CiAgI2NoYy13YWl0bGlzdC1ibG9jayAudG9wLWJhbm5lciBoMXsgZm9udC1zaXplOjIwcHg7IGxldHRlci1zcGFjaW5nOjFweDsgfQp9Cg==';
+var css = "<style>" + b64dec(cssB64) + "</style>";
+var htmlPart = `<div id="chc-waitlist-block">
+
+<div class="top-banner">
+  <h1>The Confident Hormone Club</h1>
+</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Membership Waitlist</div>
+    <h2>You're ready for clarity, confidence and community.</h2>
+    <div class="hero-sub">Let's do this together.</div>
+    <p class="hero-desc">The Confident Hormone Club is a faith-integrated membership for women ready to understand their hormones, heal their gut and feel confident in their health &mdash; with expert guidance and a community that gets it.</p>
+    <a href="#chc-email-field" class="btn chc-scroll-btn">Join the Waitlist</a>
+  </div>
+  <div class="hero-right">
+    <img src="https://raw.githubusercontent.com/KeekstheKat/brandphotos/main/_CAM0010.jpg" alt="Dr. Kaylee Alton">
+    <div class="hero-bio">Dr. Kaylee Alton, ND. Founder | Lead Clinician, the Confident Hormone Club.<br>Expert in hormone, digestive and immune health.<br>Personal relationship with Jesus.</div>
+  </div>
+</div>
+
+<div class="bonus-banner">
+  <h3>Join the Waitlist now to be the first to join when we open our doors next</h3>
+  <p>Fast action takers get a bonus offer when they join during the early bird opening.</p>
+</div>
+
+<div class="inside">
+  <div class="inside-top">
+    <div class="inside-left">
+      <img src="https://raw.githubusercontent.com/KeekstheKat/brandphotos/main/IMG_6642.JPG" alt="Inside the CHC">
+    </div>
+    <div class="inside-right">
+      <div class="eyebrow">Inside the CHC You'll Find...</div>
+      <h2>Faith-integrated health education, practical tools and community</h2>
+    </div>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h4>Monthly Live Teaching</h4>
+      <p>Live monthly teaching sessions on hormone, digestive and immune health, taught by Dr. Kaylee.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Private CHC Community</h4>
+      <p>A private, faith-centered community of women walking this journey together.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Small Groups</h4>
+      <p>6 small-group coaching sessions/year, max 25 women per group. Done either Hybrid (located in Stouffville and virtual) or Virtual only.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Health Review</h4>
+      <p>Health questionnaires filled out, receive written feedback and direction from a ND, 2x/year.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Resources + Challenges</h4>
+      <p>Practical resources, guides and seasonal challenges to help you apply what you learn.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Member Perks</h4>
+      <p>Exclusive pricing on professional brand supplements, shipped across North America.</p>
+    </div>
+  </div>
+</div>
+
+<div class="who-combined">
+  <div class="who-top">
+    <div class="who-text">
+      <h2 class="who-headline">You don't have to navigate it alone.</h2>
+      <p>For the woman who's ready to stop second-guessing and start understanding her body with confidence&mdash;this is for you.</p>
+      <ul>
+        <li>For those who are 25-55, looking to better understand their health and take action with guidance.</li>
+        <li>For those who want to understand what's really going on with your hormones and digestion.</li>
+        <li>For those who want a faith-centered lens on health.</li>
+        <li>For those looking to apply healthy habits, with community.</li>
+      </ul>
+    </div>
+    <div class="who-img">
+      <img src="https://raw.githubusercontent.com/KeekstheKat/brandphotos/main/IMG_9719.jpg" alt="CHC Community">
+    </div>
+  </div>
+  <div class="proof-row">
+    <div class="testimonial-card">
+      <p>"It was so empowering to understand a complimentary way to address my health that truly got to the root cause. So, so insightful! I just want to learn everything about digestion. I really liked the discussion about your gut affects essentially everything and how certain nutrients and food can have different impacts. It was the perfect amount of technical information (to make it feel valuable and full of new perspectives) and accessible!"</p>
+      <div class="name">Kathryn M.</div>
+    </div>
+    <div class="testimonial-card">
+      <p>"I really appreciated the inside-outside talk. It was the perfect amount of technical information to make it feel valuable and full of new perspectives, and accessible."</p>
+      <div class="name">Carly K.</div>
+    </div>
+  </div>
+</div>
+
+<div class="final-cta">
+  <h2 class="final-cta-headline">Be the first to know.</h2>
+  <p class="final-cta-sub">Join the waitlist today and you'll be the first to know when doors open next.</p>
+  <ul>
+    <li>Get launch updates and exclusive bonuses.</li>
+    <li>Get early access to secure your small-group time preference.</li>
+    <li>Secure your spot (spots are limited).</li>
+  </ul>
+  <br>
+  <a href="#chc-email-field" class="btn chc-scroll-btn">Join the Waitlist</a>
+</div>
+
+</div>`;
+var footerHtml = '<div class="chc-footer-wrap"><footer style="text-align:center;padding:18px 8vw;color:#948577;font-size:13px;background:#FBF6F2;">We take you from confused, to confident in your health.</footer></div>';
+var topHtml = css + htmlPart;
+
+function hideCoupon(){
+  var labels = document.querySelectorAll('.thrivecart-site label, .thrivecart-site .checkbox');
+  for (var i=0;i<labels.length;i++){
+    var t = (labels[i].textContent||'').trim();
+    if (t.indexOf('Have a coupon code') !== -1){
+      var container = labels[i].parentElement;
+      if (container) { container.style.display = 'none'; }
+      var next = container ? container.nextElementSibling : null;
+      if (next && next.querySelector && next.querySelector('input')) { next.style.display = 'none'; }
+    }
+  }
+}
+
+function inject(){
+  if(document.getElementById('chc-waitlist-block')) { hideCoupon(); return; }
+  var site = document.querySelector('.thrivecart-site');
+  var regions = document.querySelector('.builder-regions');
+  if(!site || !regions) { return; }
+  site.style.flexDirection = 'column';
+  var topWrap = document.createElement('div');
+  topWrap.innerHTML = topHtml;
+  site.insertBefore(topWrap, regions);
+  var footWrap = document.createElement('div');
+  footWrap.innerHTML = footerHtml;
+  site.appendChild(footWrap);
+  var btns = document.querySelectorAll('.chc-scroll-btn');
+  for (var i=0;i<btns.length;i++){
+    btns[i].addEventListener('click', function(e){
+      e.preventDefault();
+      var emailField = document.querySelector('.thrivecart-site input[type=email], .thrivecart-site input[placeholder*="first name" i], .thrivecart-site input[placeholder*="email" i]');
+      if (emailField) { emailField.scrollIntoView({behavior:'smooth', block:'center'}); emailField.focus(); }
+    });
+  }
+  hideCoupon();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', inject);
+} else {
+  inject();
+}
+setTimeout(inject, 400);
+setTimeout(inject, 1200);
+setTimeout(inject, 2500);
+setTimeout(hideCoupon, 3500);
+
+</script>
