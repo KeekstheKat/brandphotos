@@ -1,0 +1,178 @@
+<script>
+function b64dec(b64){var bin=atob(b64);var bytes=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++){bytes[i]=bin.charCodeAt(i);}return new TextDecoder('utf-8').decode(bytes);}
+var cssB64 = 'I2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9ja3sKICAtLWluazojM0ExMjMwOyAtLWNyZWFtOiNGRkY3RkE7IC0tY3JlYW0yOiNGRkU5RjI7IC0tcGluazojRkY1RkEwOwogIC0tcGluay1kYXJrOiNENjI0N0E7IC0tcGluay1kZWVwOiNCMDE0NjU7IC0tYmx1c2g6I0ZGRDZFNzsgLS1nb2xkOiNGRkMxREU7IC0tbXV0ZWQ6IzlDNkU4ODsgLS1saW5lOiNGQkM3REQ7IC0td2hpdGU6I0ZGRkZGRjsKICBmb250LWZhbWlseTogJ1F1aWNrc2FuZCcsICdIZWx2ZXRpY2EgTmV1ZScsIEFyaWFsLCBzYW5zLXNlcmlmOwogIGNvbG9yOiB2YXIoLS1pbmspOwogIHdpZHRoOiAxMDAlOwogIGJveC1zaXppbmc6IGJvcmRlci1ib3g7Cn0KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAqeyBib3gtc2l6aW5nOmJvcmRlci1ib3g7IH0KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayBheyB0ZXh0LWRlY29yYXRpb246bm9uZTsgfQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIGgxLCAjY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIGgyLCAjY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIGgzeyBmb250LWZhbWlseTonRnJhdW5jZXMnLCBHZW9yZ2lhLCBzZXJpZjsgfQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC50b3BiYXJ7IHRleHQtYWxpZ246Y2VudGVyOyBwYWRkaW5nOjE2cHg7IGJhY2tncm91bmQ6dmFyKC0td2hpdGUpOyBib3JkZXItYm90dG9tOjJweCBzb2xpZCB2YXIoLS1ibHVzaCk7IGZvbnQtZmFtaWx5OidGcmF1bmNlcycsc2VyaWY7IGZvbnQtd2VpZ2h0OjcwMDsgZm9udC1zaXplOjE1cHg7IGxldHRlci1zcGFjaW5nOjAuNXB4OyBjb2xvcjp2YXIoLS1waW5rLWRlZXApO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayBzZWN0aW9ueyBwYWRkaW5nOjU2cHggOHZ3OyB9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLmV5ZWJyb3d7IGxldHRlci1zcGFjaW5nOjIuNXB4OyB0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7IGZvbnQtc2l6ZToxMnB4OyBmb250LXdlaWdodDo3MDA7IGNvbG9yOiB2YXIoLS1waW5rLWRhcmspOyB9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLmNlbnRlcnsgdGV4dC1hbGlnbjpjZW50ZXI7IG1hcmdpbi1sZWZ0OmF1dG87IG1hcmdpbi1yaWdodDphdXRvO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuc2VjdGlvbi1oeyBmb250LXNpemU6MzJweDsgbGluZS1oZWlnaHQ6MS4yNDsgbWF4LXdpZHRoOjc2MHB4OyBmb250LXdlaWdodDo3MDA7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5idG57IGRpc3BsYXk6aW5saW5lLWJsb2NrOyBmb250LXdlaWdodDo3MDA7IGZvbnQtc2l6ZToxNC41cHg7IGxldHRlci1zcGFjaW5nOjAuNHB4OyBiYWNrZ3JvdW5kOiB2YXIoLS1waW5rKTsgY29sb3I6d2hpdGU7IHBhZGRpbmc6MTZweCAzNnB4OyBib3JkZXItcmFkaXVzOjk5OXB4OyBib3gtc2hhZG93OiAwIDhweCAyMHB4IHJnYmEoMjE0LDM2LDEyMiwwLjI4KTsgY3Vyc29yOnBvaW50ZXI7IGJvcmRlcjpub25lO30KCi8qIEhFUk8gKi8KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuaGVyb3sgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE2MGRlZywgdmFyKC0tY3JlYW0yKSwgdmFyKC0tY3JlYW0pIDY1JSk7IGRpc3BsYXk6ZmxleDsgYWxpZ24taXRlbXM6Y2VudGVyOyBnYXA6NDhweDsgcGFkZGluZzo2MHB4IDh2dyA3MHB4IDh2dzsgZmxleC13cmFwOndyYXA7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5oZXJvLWxlZnR7IGZsZXg6MSAxIDQyMHB4OyBtaW4td2lkdGg6MjgwcHg7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5oZXJvLWxlZnQgLmtpY2tlcnsgZm9udC1zaXplOjEyLjVweDsgZm9udC13ZWlnaHQ6NzAwOyBsZXR0ZXItc3BhY2luZzoxLjVweDsgY29sb3I6dmFyKC0tcGluay1kYXJrKTsgdGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOyBtYXJnaW4tYm90dG9tOjEycHg7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5oZXJvLWxlZnQgaDF7IGZvbnQtc2l6ZTozOHB4OyBsaW5lLWhlaWdodDoxLjE4OyBtYXJnaW4tYm90dG9tOjEycHg7IGZvbnQtd2VpZ2h0OjcwMDt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLmhlcm8tbGVmdCAuc3VidGl0bGV7IGZvbnQtZmFtaWx5OidDYXZlYXQnLGN1cnNpdmU7IGZvbnQtd2VpZ2h0OjcwMDsgZm9udC1zaXplOjI0cHg7IGNvbG9yOnZhcigtLXBpbmstZGVlcCk7IG1hcmdpbi1ib3R0b206MTJweDt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLmhlcm8tbGVmdCAuZGVzY3sgZm9udC1zaXplOjE1cHg7IGNvbG9yOiM1YzNhNGQ7IGxpbmUtaGVpZ2h0OjEuNzsgbWFyZ2luLWJvdHRvbToxMnB4O30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAubWV0YS1yb3d7IGZvbnQtc2l6ZToxMi41cHg7IGNvbG9yOiM1YzNhNGQ7IG1hcmdpbjoxNnB4IDAgNnB4IDA7IGZvbnQtd2VpZ2h0OjYwMDt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLnByaWNleyBmb250LXNpemU6MjZweDsgZm9udC13ZWlnaHQ6NzAwOyBjb2xvcjp2YXIoLS1waW5rLWRlZXApOyBtYXJnaW46OHB4IDAgMThweCAwO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuaGVyby1yaWdodHsgZmxleDoxIDEgMzYwcHg7IG1pbi13aWR0aDoyNjBweDsgaGVpZ2h0OjM0MHB4OyBib3JkZXItcmFkaXVzOjI0cHg7IG92ZXJmbG93OmhpZGRlbjsgYm94LXNoYWRvdzogMCAyMHB4IDQwcHggcmdiYSgxNzYsMjAsMTAxLDAuMTYpOyBib3JkZXI6NnB4IHNvbGlkIHZhcigtLXdoaXRlKTsgcG9zaXRpb246cmVsYXRpdmU7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5oZXJvLXJpZ2h0IGltZ3sgd2lkdGg6MTAwJTsgaGVpZ2h0OjEwMCU7IG9iamVjdC1maXQ6Y292ZXI7IGRpc3BsYXk6YmxvY2s7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5oZXJvLXJpZ2h0IC50YWd7IHBvc2l0aW9uOmFic29sdXRlOyBib3R0b206MTZweDsgbGVmdDoxNnB4OyBiYWNrZ3JvdW5kOnZhcigtLXdoaXRlKTsgY29sb3I6dmFyKC0tcGluay1kZWVwKTsgZm9udC13ZWlnaHQ6NzAwOyBmb250LXNpemU6MTEuNXB4OyBwYWRkaW5nOjdweCAxM3B4OyBib3JkZXItcmFkaXVzOjk5OXB4OyBib3gtc2hhZG93OjAgNnB4IDE0cHggcmdiYSgxNzYsMjAsMTAxLDAuMik7fQoKLyogV0hBVCBDSEFOR0VTICovCiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLmNoYW5nZXN7IGJhY2tncm91bmQ6dmFyKC0tY3JlYW0yKTsgZGlzcGxheTpmbGV4OyBnYXA6NDRweDsgYWxpZ24taXRlbXM6ZmxleC1zdGFydDsgZmxleC13cmFwOndyYXA7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5jaGFuZ2VzLXRleHR7IGZsZXg6MSAxIDMyMHB4O30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuY2hhbmdlcy1saXN0eyBmbGV4OjEgMSAzMjBweDsgYmFja2dyb3VuZDp3aGl0ZTsgYm9yZGVyLXJhZGl1czoyMHB4OyBwYWRkaW5nOjMwcHg7IGJveC1zaGFkb3c6IDAgMTRweCAzNHB4IHJnYmEoMTc2LDIwLDEwMSwwLjA4KTt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLmNoYW5nZXMtbGlzdCB1bHsgbGlzdC1zdHlsZTpub25lOyBmb250LXNpemU6MTRweDsgbGluZS1oZWlnaHQ6MjsgZm9udC13ZWlnaHQ6NjAwO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuY2hhbmdlcy1saXN0IGxpeyBwYWRkaW5nLWxlZnQ6MjRweDsgcG9zaXRpb246cmVsYXRpdmU7IG1hcmdpbi1ib3R0b206NnB4O30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuY2hhbmdlcy1saXN0IGxpOjpiZWZvcmV7IGNvbnRlbnQ6IvCfkpYiOyBwb3NpdGlvbjphYnNvbHV0ZTsgbGVmdDowOyB0b3A6MXB4OyBmb250LXNpemU6MTJweDt9CgovKiBGQUlUSCArIFBIWVNJT0xPR1kgKi8KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuZmFpdGh7IGJhY2tncm91bmQ6d2hpdGU7IGRpc3BsYXk6ZmxleDsgZ2FwOjQ0cHg7IGFsaWduLWl0ZW1zOmNlbnRlcjsgZmxleC13cmFwOndyYXA7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mYWl0aC1pbWd7IGZsZXg6MSAxIDMwMHB4OyBoZWlnaHQ6MzIwcHg7IGJvcmRlci1yYWRpdXM6MjJweDsgb3ZlcmZsb3c6aGlkZGVuOyBib3gtc2hhZG93OiAwIDE4cHggMzZweCByZ2JhKDE3NiwyMCwxMDEsMC4xNCk7IGJvcmRlcjo2cHggc29saWQgdmFyKC0tY3JlYW0yKTt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLmZhaXRoLWltZyBpbWd7IHdpZHRoOjEwMCU7IGhlaWdodDoxMDAlOyBvYmplY3QtZml0OmNvdmVyOyBkaXNwbGF5OmJsb2NrO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuZmFpdGgtdGV4dHsgZmxleDoxIDEgMzQwcHg7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mYWl0aC10ZXh0IHB7IGZvbnQtc2l6ZToxNXB4OyBjb2xvcjojNWMzYTRkOyBsaW5lLWhlaWdodDoxLjc1OyBtYXJnaW4tYm90dG9tOjEycHg7fQoKLyogRk9SIFlPVSBJRiAqLwojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mb3J5b3V7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsIHZhcigtLXBpbmstZGVlcCksIHZhcigtLXBpbmstZGFyaykpOyBjb2xvcjp3aGl0ZTsgdGV4dC1hbGlnbjpjZW50ZXI7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mb3J5b3UgaDJ7IGNvbG9yOndoaXRlOyBtYXgtd2lkdGg6NjAwcHg7IG1hcmdpbjowIGF1dG8gMzBweCBhdXRvOyBmb250LXdlaWdodDo3MDA7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mb3J5b3UgLmV5ZWJyb3d7IGNvbG9yOnZhcigtLWdvbGQpO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuZm9yeW91LWdyaWR7IGRpc3BsYXk6Z3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOnJlcGVhdCgyLDFmcik7IGdhcDoxNHB4OyBtYXgtd2lkdGg6OTAwcHg7IG1hcmdpbjowIGF1dG87fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mb3J5b3UtaXRlbXsgYmFja2dyb3VuZDpyZ2JhKDI1NSwyNTUsMjU1LDAuMTQpOyBib3JkZXItcmFkaXVzOjE0cHg7IHBhZGRpbmc6MTZweCAyMHB4OyB0ZXh0LWFsaWduOmxlZnQ7IGZvbnQtc2l6ZToxMy41cHg7IGZvbnQtd2VpZ2h0OjYwMDsgY29sb3I6I0ZGRjBGNzsgZGlzcGxheTpmbGV4OyBnYXA6MTBweDt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLmZvcnlvdS1pdGVtIC5kb3R7IHdpZHRoOjhweDsgaGVpZ2h0OjhweDsgYm9yZGVyLXJhZGl1czo1MCU7IGJhY2tncm91bmQ6dmFyKC0tZ29sZCk7IGZsZXgtc2hyaW5rOjA7IG1hcmdpbi10b3A6NnB4O30KCi8qIFNDSEVEVUxFIChjb25kZW5zZWQpICovCiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLnNjaGVkdWxleyBiYWNrZ3JvdW5kOnZhcigtLWNyZWFtKTsgdGV4dC1hbGlnbjpjZW50ZXI7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5zY2hlZHVsZS1zdWJ7IGZvbnQtd2VpZ2h0OjcwMDsgY29sb3I6dmFyKC0tcGluay1kYXJrKTsgbGV0dGVyLXNwYWNpbmc6MC41cHg7IG1hcmdpbjo2cHggMCAzMHB4IDA7IGZvbnQtc2l6ZToxM3B4O30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuc2NoZWR1bGUtaW5mb3sgbWF4LXdpZHRoOjU2MHB4OyBtYXJnaW46MCBhdXRvOyBiYWNrZ3JvdW5kOndoaXRlOyBib3JkZXItcmFkaXVzOjIwcHg7IHBhZGRpbmc6MzBweDsgYm94LXNoYWRvdzogMCAxNHB4IDM0cHggcmdiYSgxNzYsMjAsMTAxLDAuMDgpO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuaW5mby1jaGlweyBiYWNrZ3JvdW5kOnZhcigtLWJsdXNoKTsgYm9yZGVyLXJhZGl1czoxNHB4OyBwYWRkaW5nOjEzcHggMTZweDsgZm9udC1zaXplOjEzcHg7IGNvbG9yOnZhcigtLXBpbmstZGVlcCk7IGZvbnQtd2VpZ2h0OjcwMDsgbWFyZ2luLWJvdHRvbToxMHB4O30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuc2NoZWR1bGUtaW5mbyBweyBmb250LXNpemU6MTRweDsgY29sb3I6IzVjM2E0ZDsgbGluZS1oZWlnaHQ6MS43OyBtYXJnaW46MTRweCAwIDE4cHggMDt9CgovKiBXSFkgRFIgS0FZTEVFICovCiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLndoeXsgYmFja2dyb3VuZDp2YXIoLS1jcmVhbTIpOyBkaXNwbGF5OmZsZXg7IGdhcDo0NHB4OyBhbGlnbi1pdGVtczpjZW50ZXI7IGZsZXgtd3JhcDp3cmFwO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAud2h5LWltZ3sgZmxleDoxIDEgMjYwcHg7IGhlaWdodDozNDBweDsgYm9yZGVyLXJhZGl1czoyMnB4OyBvdmVyZmxvdzpoaWRkZW47IGJveC1zaGFkb3c6IDAgMThweCAzNnB4IHJnYmEoMTc2LDIwLDEwMSwwLjE2KTsgYm9yZGVyOjZweCBzb2xpZCB2YXIoLS13aGl0ZSk7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC53aHktaW1nIGltZ3sgd2lkdGg6MTAwJTsgaGVpZ2h0OjEwMCU7IG9iamVjdC1maXQ6Y292ZXI7IGRpc3BsYXk6YmxvY2s7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC53aHktdGV4dHsgZmxleDoxIDEgMzYwcHg7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC53aHktdGV4dCBweyBmb250LXNpemU6MTVweDsgY29sb3I6IzVjM2E0ZDsgbGluZS1oZWlnaHQ6MS43NTsgbWFyZ2luLWJvdHRvbToxMnB4O30KCi8qIEZBUSAqLwojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mYXF7IGJhY2tncm91bmQ6d2hpdGU7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mYXEgaDJ7IHRleHQtYWxpZ246Y2VudGVyOyBtYXJnaW4tYm90dG9tOjMwcHg7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5mYXEtbGlzdHsgbWF4LXdpZHRoOjc4MHB4OyBtYXJnaW46MCBhdXRvO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuZmFxLWl0ZW17IGJvcmRlci1ib3R0b206MS41cHggc29saWQgdmFyKC0tbGluZSk7IHBhZGRpbmc6MThweCAwO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuZmFxLWl0ZW0gaDR7IGZvbnQtc2l6ZToxNXB4OyBjb2xvcjp2YXIoLS1waW5rLWRhcmspOyBtYXJnaW4tYm90dG9tOjZweDsgZm9udC13ZWlnaHQ6NzAwO30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuZmFxLWl0ZW0gcHsgZm9udC1zaXplOjEzLjVweDsgY29sb3I6IzVjM2E0ZDsgbGluZS1oZWlnaHQ6MS42O30KCiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgZm9vdGVyeyBiYWNrZ3JvdW5kOnZhcigtLWluayk7IGNvbG9yOiNFOEI4RDI7IHRleHQtYWxpZ246Y2VudGVyOyBwYWRkaW5nOjI0cHg7IGZvbnQtc2l6ZToxMXB4OyBsZXR0ZXItc3BhY2luZzoxcHg7IGZvbnQtd2VpZ2h0OjYwMDt9CgovKiBSRUdJU1RSQVRJT04gKi8KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAucmVnaXN0ZXJ7IGJhY2tncm91bmQ6dmFyKC0tY3JlYW0pOyB0ZXh0LWFsaWduOmNlbnRlcjt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLnJlZ2lzdGVyLWNhcmR7IG1heC13aWR0aDo1NjBweDsgbWFyZ2luOjAgYXV0bzsgYmFja2dyb3VuZDp3aGl0ZTsgYm9yZGVyOjJweCBzb2xpZCB2YXIoLS1waW5rKTsgYm9yZGVyLXJhZGl1czoyNHB4OyBwYWRkaW5nOjQwcHg7IGJveC1zaGFkb3c6IDAgMjRweCA1MHB4IHJnYmEoMTc2LDIwLDEwMSwwLjE2KTt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLnJlZ2lzdGVyLWNhcmQgLm5hbWV7IGZvbnQtc2l6ZToyMnB4OyBtYXJnaW4tYm90dG9tOjRweDsgZm9udC13ZWlnaHQ6NzAwOyBmb250LWZhbWlseTonRnJhdW5jZXMnLCBHZW9yZ2lhLCBzZXJpZjt9CiNjaGMtcGVyaW9kLXJlZmluZWQtYmxvY2sgLnJlZ2lzdGVyLWNhcmQgLnN1YnsgZm9udC1mYW1pbHk6J0NhdmVhdCcsY3Vyc2l2ZTsgZm9udC13ZWlnaHQ6NzAwOyBmb250LXNpemU6MjFweDsgY29sb3I6dmFyKC0tcGluay1kZWVwKTsgbWFyZ2luLWJvdHRvbToxNHB4O30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAucmVnaXN0ZXItY2FyZCAucmVnaXN0ZXItbm90ZXsgZm9udC1zaXplOjE0cHg7IGNvbG9yOiM1YzNhNGQ7IGxpbmUtaGVpZ2h0OjEuNjsgbWFyZ2luLWJvdHRvbToxOHB4O30KI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAucmVnaXN0ZXItY2FyZCAuZGV0YWlsc3sgZm9udC1zaXplOjEzcHg7IGNvbG9yOiM1YzNhNGQ7IG1hcmdpbi1ib3R0b206MjBweDsgbGluZS1oZWlnaHQ6MS44OyBmb250LXdlaWdodDo2MDA7fQojY2hjLXBlcmlvZC1yZWZpbmVkLWJsb2NrIC5yZWdpc3Rlci1jYXJkIC5wcmljZXsgZm9udC1zaXplOjMwcHg7IG1hcmdpbi1ib3R0b206MjBweDsgY29sb3I6dmFyKC0tcGluay1kZWVwKTsgZm9udC13ZWlnaHQ6NzAwO30KCkBtZWRpYSAobWF4LXdpZHRoOiA3NjBweCl7CiAgI2NoYy1wZXJpb2QtcmVmaW5lZC1ibG9jayAuZm9yeW91LWdyaWR7IGdyaWQtdGVtcGxhdGUtY29sdW1uczoxZnI7IH0KfQo=';
+var css = "<style>" + b64dec(cssB64) + "</style>";
+var htmlPart = `<div id="chc-period-refined-block">
+
+<div class="topbar">THE CONFIDENT HORMONE CLUB</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="kicker">Period Literacy & Faith Workshop &middot; Live 2-Hour Workshop for Christian Women</div>
+    <h1>Understand your cycle. Decode your symptoms. Know what deserves a closer look.</h1>
+    <div class="subtitle">What Your Period Is Trying to Tell You</div>
+    <p class="desc">A practical Period Literacy &amp; Faith Workshop for Christian women who want to understand what a healthy menstrual cycle can look like, what their symptoms may be communicating, and how to make more informed decisions about their hormone health. Dr. Kaylee has a personal relationship with Jesus &mdash; learn how health and faith intersect, and practical tips you can do to support your period symptoms.</p>
+    <div class="meta-row">SATURDAY, SEPTEMBER 26 &middot; 9:00&ndash;11:00 AM ET &middot; LIVE ON ZOOM &middot; LIVE Q&amp;A</div>
+    <div class="price">$87</div>
+    <a href="#chc-checkout-anchor" class="btn chc-scroll-btn">Reserve Your Seat &mdash; Sept 26</a>
+  </div>
+  <div class="hero-right"><img src="https://raw.githubusercontent.com/KeekstheKat/brandphotos/main/Happy%20Joy%20Woman.jpeg" alt="Period Literacy Workshop"><div class="tag">&#10024; Come as you are</div></div>
+</div>
+
+<section class="changes">
+  <div class="changes-text">
+    <div class="eyebrow">What Period Literacy Changes</div>
+    <h2 class="section-h" style="margin:12px 0 16px 0;">Your cycle can become useful information instead of a monthly mystery.</h2>
+    <p style="font-size:15px; color:#5c3a4d; line-height:1.75;">Period literacy means knowing enough about your cycle to notice patterns, recognize when something deserves attention, ask better questions, and make thoughtful decisions about what to do next.</p>
+  </div>
+  <div class="changes-list">
+    <div class="eyebrow" style="margin-bottom:10px;">In This Workshop, You'll Learn</div>
+    <ul>
+      <li>Cycle + ovulation foundations</li>
+      <li>What your period can tell you</li>
+      <li>PMS, pain, bleeding, acne, fatigue</li>
+      <li>PMOS/PCOS foundations</li>
+      <li>Nutrition + everyday habits</li>
+      <li>Labs worth discussing</li>
+      <li>Future fertility awareness</li>
+      <li>Physical + spiritual stewardship</li>
+      <li>Live Q&amp;A</li>
+    </ul>
+  </div>
+</section>
+
+<section class="faith">
+  <div class="faith-img"><img src="https://raw.githubusercontent.com/KeekstheKat/brandphotos/main/Group%20Photo.jpeg" alt="Community of women"></div>
+  <div class="faith-text">
+    <div class="eyebrow">Faith + Physiology</div>
+    <h2 class="section-h" style="margin:12px 0 16px 0;">You don't have to choose between faith and learning how your body works.</h2>
+    <p>God gave you a physical body worth understanding&mdash;and He gave you wisdom, discernment, prayer and relationship with Him.</p>
+    <p>This workshop is primarily practical period-health education. It also makes room for prayer, Scripture and the spiritual disciplines that shape the way we steward our health.</p>
+  </div>
+</section>
+
+<section class="foryou">
+  <div class="eyebrow">This Workshop Is For You If...</div>
+  <h2 style="margin-top:12px;">You want to know your body&mdash;not obsess over it.</h2>
+  <div class="foryou-grid">
+    <div class="foryou-item"><div class="dot"></div>Your periods are painful, heavy, irregular or exhausting.</div>
+    <div class="foryou-item"><div class="dot"></div>You experience PMS, hormonal acne or cycle-related mood changes.</div>
+    <div class="foryou-item"><div class="dot"></div>You have PMOS/PCOS&mdash;or wonder whether your symptoms fit.</div>
+    <div class="foryou-item"><div class="dot"></div>You've been told your bloodwork is "normal," but still have questions.</div>
+    <div class="foryou-item"><div class="dot"></div>You want to understand ovulation and protect future fertility.</div>
+    <div class="foryou-item"><div class="dot"></div>You want practical education that sits alongside your Christian faith.</div>
+  </div>
+</section>
+
+<section class="schedule">
+  <div class="eyebrow center">&#10024; Your Saturday Morning</div>
+  <h2 class="section-h center" style="margin:8px auto 4px auto;">Two focused hours to understand the cycle you live in every month.</h2>
+  <div class="schedule-sub">SATURDAY, SEPTEMBER 26 &middot; 9:00&ndash;11:00 AM ET</div>
+  <div class="schedule-info">
+    <div class="info-chip">&#128187; LIVE ON ZOOM</div>
+    <div class="info-chip">&#127909; RECORDING + WORKBOOK AVAILABLE</div>
+    <div class="info-chip">&#128587;&zwj;&#9792;&#65039; LIVE Q&amp;A INCLUDED</div>
+    <p>You'll leave with a clearer framework for understanding your cycle and a better sense of what you may want to track, change, discuss or investigate next.</p>
+    <a href="#chc-checkout-anchor" class="btn chc-scroll-btn" style="width:100%; text-align:center; box-sizing:border-box;">Reserve Your Seat &mdash; Sept 26</a>
+  </div>
+</section>
+
+<section class="why">
+  <div class="why-img"><img src="https://raw.githubusercontent.com/KeekstheKat/brandphotos/main/_CAM0052.jpg" alt="Dr. Kaylee Alton"></div>
+  <div class="why-text">
+    <div class="eyebrow">Why Learn This From Dr. Kaylee?</div>
+    <h2 class="section-h" style="margin:12px 0 16px 0;">Period education should be clear enough to use&mdash;and clinically grounded enough to trust.</h2>
+    <p>Dr. Kaylee Alton, ND, BPhE is a licensed naturopathic doctor with more than 12 years of clinical experience. Her work focuses on helping women understand complex hormone, digestive and immune-health concerns through a practical, root-cause-oriented lens.</p>
+    <p>Her goal is not to give you another list of hormone rules. It's to help you understand how your body works so you can become a more informed, confident participant in your own care.</p>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="section-h center">Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item"><h4>Do I need to have painful or irregular periods to attend?</h4><p>No. This workshop is also for women who simply want stronger period literacy or a clearer understanding of their cycle.</p></div>
+    <div class="faq-item"><h4>Is this a Christian workshop?</h4><p>Yes. Christian faith is intentionally part of the conversation, alongside practical period-health education.</p></div>
+    <div class="faq-item"><h4>Will there be a recording?</h4><p>Yes. Every registered seat includes the recording plus a downloadable workbook/guide.</p></div>
+    <div class="faq-item"><h4>What is the cancellation/refund policy?</h4><p>All sales are final. Because this is a small, live-taught workshop, we're not able to offer refunds &mdash; but your seat includes the recording and workbook, so it won't go to waste.</p></div>
+  </div>
+</section>
+
+<section class="register">
+  <div class="register-card">
+    <div class="name">PERIOD LITERACY &amp; FAITH WORKSHOP</div>
+    <div class="sub">What Your Period Is Trying to Tell You</div>
+    <p class="register-note">Spend one Saturday morning learning how to understand your cycle and become more confident in your hormone health.</p>
+    <div class="details">Saturday, September 26 &nbsp;&middot;&nbsp; 9:00&ndash;11:00 AM ET<br>Live on Zoom &nbsp;&middot;&nbsp; Live teaching + Q&amp;A &nbsp;&middot;&nbsp; Recording + workbook included</div>
+    <div class="price">$87</div>
+    <a href="#chc-checkout-anchor" class="btn chc-scroll-btn">Reserve Your Seat &mdash; Sept 26</a>
+  </div>
+</section>
+
+</div>
+`;
+var footerHtml = `<div class="chc-period-refined-foot-wrap">
+<div id="chc-period-refined-block">
+  <footer>THE CONFIDENT HORMONE CLUB &middot; PERIOD LITERACY &amp; FAITH WORKSHOP</footer>
+</div>
+</div>
+`;
+var topHtml = css + htmlPart;
+
+function hideAmex(){
+  var imgs = document.querySelectorAll('.thrivecart-site img, .thrivecart-site svg');
+  for (var i=0;i<imgs.length;i++){
+    var alt = (imgs[i].getAttribute('alt')||'') + ' ' + (imgs[i].getAttribute('src')||'') + ' ' + (imgs[i].className||'');
+    if (alt.toLowerCase().indexOf('amex') !== -1 || alt.toLowerCase().indexOf('american-express') !== -1 || alt.toLowerCase().indexOf('americanexpress') !== -1){
+      imgs[i].style.display = 'none';
+    }
+  }
+}
+
+function hideCoupon(){
+  var labels = document.querySelectorAll('.thrivecart-site label, .thrivecart-site .checkbox');
+  for (var i=0;i<labels.length;i++){
+    var t = (labels[i].textContent||'').trim();
+    if (t.indexOf('Have a coupon code') !== -1){
+      var container = labels[i].parentElement;
+      if (container) { container.style.display = 'none'; }
+      var next = container ? container.nextElementSibling : null;
+      if (next && next.querySelector && next.querySelector('input')) { next.style.display = 'none'; }
+    }
+  }
+  hideAmex();
+}
+
+function inject(){
+  if(document.getElementById('chc-period-refined-block')) { hideCoupon(); return; }
+  var site = document.querySelector('.thrivecart-site');
+  var regions = document.querySelector('.builder-regions');
+  if(!site || !regions) { return; }
+  site.style.flexDirection = 'column';
+  if(!regions.id) { regions.id = 'chc-checkout-anchor'; }
+  var topWrap = document.createElement('div');
+  topWrap.innerHTML = topHtml;
+  site.insertBefore(topWrap, regions);
+  var footWrap = document.createElement('div');
+  footWrap.innerHTML = footerHtml;
+  site.appendChild(footWrap);
+  var btns = document.querySelectorAll('.chc-scroll-btn');
+  for (var i=0;i<btns.length;i++){
+    btns[i].addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.getElementById('chc-checkout-anchor');
+      if (target) { target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  }
+  hideCoupon();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', inject);
+} else {
+  inject();
+}
+setTimeout(inject, 400);
+setTimeout(inject, 1200);
+setTimeout(inject, 2500);
+setTimeout(hideCoupon, 3500);
+
+</script>
